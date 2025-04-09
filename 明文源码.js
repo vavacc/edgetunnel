@@ -1,4 +1,3 @@
-
 import { connect } from 'cloudflare:sockets';
 
 let userID = '';
@@ -36,13 +35,13 @@ let proxyhosts = [];
 let proxyhostsURL = '';
 let RproxyIP = 'false';
 const httpPorts = ["8080", "8880", "2052", "2082", "2086", "2095"];
-let httpsPorts = ["2053", "2083", "2087", "2096", "8443"];
+let httpsPorts = ["8443"];//"2053", "2083", "2087", "2096"
 let 有效时间 = 7;
 let 更新时间 = 3;
 let userIDLow;
 let userIDTime = "";
 let proxyIPPool = [];
-let path = '/?ed=2560&proxyip=AI.911622.xyz';
+let path = '/proxyip=AI.911622.xyz';
 let 动态UUID;
 let link = [];
 let banHosts = [atob('c3BlZWQuY2xvdWRmbGFyZS5jb20=')];
@@ -1272,6 +1271,7 @@ async function 生成配置信息(userID, hostName, sub, UA, RproxyIP, _url, fak
 				'162.159.134.0/24',
 				'162.159.133.0/24',
 				'162.159.129.0/24',
+				'188.114.99.0/24',
 				'103.21.244.0/24',
 				'104.16.0.0/13',
 				'104.24.0.0/14',
