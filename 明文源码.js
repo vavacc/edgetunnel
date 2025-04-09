@@ -138,13 +138,13 @@ export default {
 				if (url.searchParams.has('notls')) noTLS = 'true';
 
 				if (url.searchParams.has('proxyip')) {
-					path = `/?ed=2560&proxyip=${url.searchParams.get('proxyip')}`;
+					path = `/?proxyip=${url.searchParams.get('proxyip')}`;
 					RproxyIP = 'false';
 				} else if (url.searchParams.has('socks5')) {
-					path = `/?ed=2560&socks5=${url.searchParams.get('socks5')}`;
+					path = `/?socks5=${url.searchParams.get('socks5')}`;
 					RproxyIP = 'false';
 				} else if (url.searchParams.has('socks')) {
-					path = `/?ed=2560&socks5=${url.searchParams.get('socks')}`;
+					path = `/?socks5=${url.searchParams.get('socks')}`;
 					RproxyIP = 'false';
 				}
 
@@ -1258,6 +1258,20 @@ async function 生成配置信息(userID, hostName, sub, UA, RproxyIP, _url, fak
 		if ((addresses.length + addressesapi.length + addressesnotls.length + addressesnotlsapi.length + addressescsv.length) == 0) {
 			// 定义 Cloudflare IP 范围的 CIDR 列表
 			let cfips = [
+				'104.25.250.0/24',
+				'104.25.249.0/24',
+				'104.25.248.0/24',
+				'104.25.252.0/24',
+				'172.67.69.0/24',
+				'162.159.44.0/24',
+				'162.159.41.0/24',
+				'162.159.40.0/24',
+				'162.159.137.0/24',
+				'162.159.136.0/24',
+				'162.159.135.0/24',
+				'162.159.134.0/24',
+				'162.159.133.0/24',
+				'162.159.129.0/24',
 				'103.21.244.0/24',
 				'104.16.0.0/13',
 				'104.24.0.0/14',
@@ -1296,17 +1310,17 @@ async function 生成配置信息(userID, hostName, sub, UA, RproxyIP, _url, fak
 
 				return randomIP.join('.');
 			}
-			addresses = addresses.concat('127.0.0.1:1234#CFnat');
+			addresses = addresses.concat('nono.911658.xyz:443#【幽紫乄Pro】');
 			let counter = 1;
 			if (hostName.includes("worker") || hostName.includes("notls")) {
 				const randomPorts = httpPorts.concat('80');
 				addressesnotls = addressesnotls.concat(
-					cfips.map(cidr => generateRandomIPFromCIDR(cidr) + ':' + randomPorts[Math.floor(Math.random() * randomPorts.length)] + '#CF随机节点' + String(counter++).padStart(2, '0'))
+					cfips.map(cidr => generateRandomIPFromCIDR(cidr) + ':' + randomPorts[Math.floor(Math.random() * randomPorts.length)] + '#【幽紫乄CF】' + String(counter++).padStart(2, '0'))
 				);
 			} else {
 				const randomPorts = httpsPorts.concat('443');
 				addresses = addresses.concat(
-					cfips.map(cidr => generateRandomIPFromCIDR(cidr) + ':' + randomPorts[Math.floor(Math.random() * randomPorts.length)] + '#CF随机节点' + String(counter++).padStart(2, '0'))
+					cfips.map(cidr => generateRandomIPFromCIDR(cidr) + ':' + randomPorts[Math.floor(Math.random() * randomPorts.length)] + '#【幽紫乄CF】' + String(counter++).padStart(2, '0'))
 				);
 			}
 		}
@@ -1836,7 +1850,7 @@ function 生成本地订阅(host, UUID, noTLS, newAddressesapi, newAddressescsv,
 		let 最终路径 = path;
 		let 节点备注 = '';
 		const matchingProxyIP = proxyIPPool.find(proxyIP => proxyIP.includes(address));
-		if (matchingProxyIP) 最终路径 += `&proxyip=${matchingProxyIP}`;
+		if (matchingProxyIP) 最终路径 = `/?proxyip=${matchingProxyIP}`;
 
 		if (proxyhosts.length > 0 && (伪装域名.includes('.workers.dev'))) {
 			最终路径 = `/${伪装域名}${最终路径}`;
