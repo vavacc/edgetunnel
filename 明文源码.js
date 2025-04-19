@@ -1353,12 +1353,12 @@ async function 生成配置信息(userID, hostName, sub, UA, RproxyIP, _url, fak
 			if (hostName.includes("worker") || hostName.includes("notls")) {
 				const randomPorts = httpPorts.concat('80');
 				addressesnotls = addressesnotls.concat(
-					cfips.map(cidr => generateRandomIPFromCIDR(cidr) + ':' + randomPorts[Math.floor(Math.random() * randomPorts.length)] + '#【幽紫乄CF】' + String(counter++).padStart(2, '0'))
+					cfips.map(cidr => generateRandomIPFromCIDR(cidr) + ':' + randomPorts[Math.floor(Math.random() * randomPorts.length)] + '#【Ai乄幽紫】' + String(counter++).padStart(2, '0'))
 				);
 			} else {
 				const randomPorts = httpsPorts.concat('443');
 				addresses = addresses.concat(
-					cfips.map(cidr => generateRandomIPFromCIDR(cidr) + ':' + randomPorts[Math.floor(Math.random() * randomPorts.length)] + '#【幽紫乄CF】' + String(counter++).padStart(2, '0'))
+					cfips.map(cidr => generateRandomIPFromCIDR(cidr) + ':' + randomPorts[Math.floor(Math.random() * randomPorts.length)] + '#【Ai乄幽紫】' + String(counter++).padStart(2, '0'))
 				);
 			}
 		}
