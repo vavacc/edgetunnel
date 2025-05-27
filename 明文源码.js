@@ -36,7 +36,7 @@ let proxyhostsURL = '';
 let RproxyIP = 'false';
 const httpPorts = ["8080", "8880", "2052", "2082", "2086", "2095"];
 let httpsPorts = ["443"];//"2053", "2083", "2087", "2096","8443"
-let 有效时间 = 7;
+let 有效时间 = 90;
 let 更新时间 = 3;
 let userIDLow;
 let userIDTime = "";
