@@ -1498,17 +1498,17 @@ async function 生成配置信息(userID, hostName, sub, UA, RproxyIP, _url, fak
 
                 return randomIP.join('.');
             }
-            addresses = addresses.concat('127.0.0.1:1234#CFnat');
+            addresses = addresses.concat('nono.911658.xyz#【Smile乄紫夜】');
             let counter = 1;
             if (hostName.includes("worker") || hostName.includes("notls")) {
                 const randomPorts = httpPorts.concat('80');
                 addressesnotls = addressesnotls.concat(
-                    cfips.map(cidr => generateRandomIPFromCIDR(cidr) + ':' + randomPorts[Math.floor(Math.random() * randomPorts.length)] + '#CF随机节点' + String(counter++).padStart(2, '0'))
+                    cfips.map(cidr => generateRandomIPFromCIDR(cidr) + ':' + randomPorts[Math.floor(Math.random() * randomPorts.length)] + '#【Ai乄紫夜】' + String(counter++).padStart(2, '0'))
                 );
             } else {
                 const randomPorts = httpsPorts.concat('443');
                 addresses = addresses.concat(
-                    cfips.map(cidr => generateRandomIPFromCIDR(cidr) + ':' + randomPorts[Math.floor(Math.random() * randomPorts.length)] + '#CF随机节点' + String(counter++).padStart(2, '0'))
+                    cfips.map(cidr => generateRandomIPFromCIDR(cidr) + ':' + randomPorts[Math.floor(Math.random() * randomPorts.length)] + '#CF【Ai乄紫夜】' + String(counter++).padStart(2, '0'))
                 );
             }
         }
